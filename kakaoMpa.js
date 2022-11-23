@@ -59,4 +59,4 @@ function displayMarker(locPosition, message) {
 
 $(function(){
     kakaoMap();
-})
+});
