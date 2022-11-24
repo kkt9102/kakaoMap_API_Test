@@ -40,10 +40,11 @@ function displayMarker(locPosition, message) {
         marker.setMap(null);
     }
     // 마커를 생성합니다
-    marker = new kakao.maps.Marker({
+    var marker = new kakao.maps.Marker({
+        map: map,
         position: locPosition
     });
-    marker.setMap(map);
+//     marker.setMap(map);
     flag = true;
 //     var iwContent = message, // 인포윈도우에 표시할 내용
 //         iwRemoveable = true;
