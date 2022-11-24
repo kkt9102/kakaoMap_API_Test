@@ -18,7 +18,7 @@ if (navigator.geolocation) {
         
         var locPosition = new kakao.maps.LatLng(lat, lon), // 마커가 표시될 위치를 geolocation으로 얻어온 좌표로 생성합니다
             message = '<div style="padding:5px;">여기에 계신가요?!</div>'; // 인포윈도우에 표시될 내용입니다
-        
+        const flag = false;
         // 마커와 인포윈도우를 표시합니다
         displayMarker(locPosition, message);
             
@@ -34,13 +34,15 @@ if (navigator.geolocation) {
 
 // 지도에 마커와 인포윈도우를 표시하는 함수입니다
 function displayMarker(locPosition, message) {
-
+    if(flag){
+        marker.setMap(null);
+    }
     // 마커를 생성합니다
-    var marker = new kakao.maps.Marker({  
+    var marker = new kakao.maps.Marker({
         map: map, 
         position: locPosition
     }); 
-    
+    flag = true;
     var iwContent = message, // 인포윈도우에 표시할 내용
         iwRemoveable = true;
 
