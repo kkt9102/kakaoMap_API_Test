@@ -38,22 +38,22 @@ function displayMarker(locPosition, message) {
         marker.setMap(null);
     }
     // 마커를 생성합니다
-    var marker = new kakao.maps.Marker({
-        map: map, 
+    marker = new kakao.maps.Marker({
         position: locPosition
-    }); 
-    flag = true;
-    var iwContent = message, // 인포윈도우에 표시할 내용
-        iwRemoveable = true;
-
-    // 인포윈도우를 생성합니다
-    var infowindow = new kakao.maps.InfoWindow({
-        content : iwContent,
-        removable : iwRemoveable
     });
+    marker.setMap(map);
+    flag = true;
+//     var iwContent = message, // 인포윈도우에 표시할 내용
+//         iwRemoveable = true;
+
+//     // 인포윈도우를 생성합니다
+//     var infowindow = new kakao.maps.InfoWindow({
+//         content : iwContent,
+//         removable : iwRemoveable
+//     });
     
-    // 인포윈도우를 마커위에 표시합니다 
-    infowindow.open(map, marker);
+//     // 인포윈도우를 마커위에 표시합니다 
+//     infowindow.open(map, marker);
     
     // 지도 중심좌표를 접속위치로 변경합니다
     map.setCenter(locPosition);      
