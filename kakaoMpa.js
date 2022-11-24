@@ -33,6 +33,8 @@ if (navigator.geolocation) {
 }
 
 // 지도에 마커와 인포윈도우를 표시하는 함수입니다
+    var marker;
+    var flag = false;
 function displayMarker(locPosition, message) {
     if(flag){
         marker.setMap(null);
